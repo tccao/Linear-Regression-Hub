@@ -1,0 +1,29 @@
+-Least Square (LE) for regression
+yhat= b0+b1x+e, e~N(0,sigma^2); y= beta0 +beta1 +e;
+-Estimator for mean(mu) and variance (sigma^2)
+TSS = Total (y-y_hat)^2
+S^2 = TSS/(N-2) = Mean Square Error (MSE)
+E(MSE) = Sigma^2 = unbiased estimator for sigma^2
+
+-Sampling distribution for b0,b1
+-Assumption: Normality holds for e~N(.,.)
+-Hypothesis testing: H0: b1=0; Ha: b1!=0
+-Sampling distribution for b1: E(b1) = beta1; sigma^2(b1) = sigma^2/ sum(xi-xbar)^2
+-(b1-beta1)/s(b1) ~ t(n-2); s(b1) estimates sigma
+(b1-beta1) ~ N(.); after divide for s, we get a studentized statistic.
+-confidence interval: b1 +- t(1-alpha/2; n-2).s(b1)
+assume alpha=5%.
+-Let t* = b1/s(b1); if |t| <= t(1-alpha/2;n-2) -> fail to reject h0
+|t*|>t, reject h0
+
+-Inference surrounding b0 = ybar - b1.xbar;
+(b0-beta0)/s(b0) ~ t(n-2)
+CI bo: bo +- t(1-alpha/2;n-2).s(b0). As n-> infty, apply Central Limit Theorem CLT. Our distribution asymptotically approximate normal distribution.
+
+-ANOVA test: test for diffences in population mean by comparing variance within sample to amount of variation across samples.
+-Single way ANOVA (assupmptions: Variance and degree of freedom; independent random samples; Normality in distribution; Homogeneity of Variance (Largest(std)/Smallest(std) < 2))
+--Makes independent samples for each team; compute each team means; compare means between group; make decision
+--TSS = RSS(for degree g-1) + ESS(degree N-g)
+-Find 2 means(u) of groups then, apply F-test;
+-H0: unique group (u1) = u2 =... Ha: u1 != u2 !=...;
+-F-test = MSTR/MSE (mean residual)
